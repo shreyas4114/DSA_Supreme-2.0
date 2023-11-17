@@ -1,1 +1,0 @@
-Q. 20. Valid Parenthesis    https://leetcode.com/problems/valid-parentheses/description/
