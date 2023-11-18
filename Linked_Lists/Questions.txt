@@ -1,0 +1,6 @@
+206. Reverse Linked List    https://leetcode.com/problems/reverse-linked-list/description/
+876. Middle of a linked list    https://leetcode.com/problems/middle-of-the-linked-list/description/
+234. Palindrome Linked List     https://leetcode.com/problems/palindrome-linked-list/description/
+141. Linked list cycle          https://leetcode.com/problems/linked-list-cycle/submissions/1101413091/
+142. Linked list cycle II       https://leetcode.com/problems/linked-list-cycle-ii/description/
+25. reverse nodes in k-group    https://leetcode.com/problems/reverse-nodes-in-k-group/description/
