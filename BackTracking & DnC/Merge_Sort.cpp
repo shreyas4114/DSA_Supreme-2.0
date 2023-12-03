@@ -1,8 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void merge(vector<int> &arr, vector<int> &temp, int s, int mid, int e)
+void merge(vector<int> &arr, int s, int mid, int e)
 {
+    vector<int> temp(arr.size(), 0);
     int i = s;          // left side of mid
     int j = mid+1 ;      // right side of mid
     int k = s;         //  for temp vector
@@ -21,7 +22,7 @@ void merge(vector<int> &arr, vector<int> &temp, int s, int mid, int e)
             j++;
         }
     }
-    // handle remaining elements in case of diff array size
+    // handle remaining elements in case of different array size
     while (i <= mid)
     {
         temp[k] = arr[i];
@@ -43,16 +44,16 @@ void merge(vector<int> &arr, vector<int> &temp, int s, int mid, int e)
     }
 }
 
-void mergesort(vector<int> &arr, vector<int> &temp, int s, int e)
+void mergesort(vector<int> &arr, int s, int e)
 {
     if(s >= e) return ;
 
     int mid = (s+e)/2 ;
     // divide
-    mergesort(arr, temp, s, mid);
-    mergesort(arr, temp, mid + 1, e);
+    mergesort(arr, s, mid);
+    mergesort(arr, mid + 1, e);
     // conqour
-    merge(arr, temp, s, mid, e);
+    merge(arr, s, mid, e);
 }
 
 int main()
@@ -61,7 +62,7 @@ int main()
     int size = arr.size();
     int s= 0;
     int e= size-1;
-    vector<int> temp(arr.size(), 0) ;    // yaha galti karoge    don't forget this
+    // vector<int> temp(arr.size(), 0) ;    // yaha galti karoge    don't forget this
 
     cout << "Before merge sort: " << endl;
     for (int i = 0; i < size; i++)
@@ -70,7 +71,7 @@ int main()
     }
     cout << endl;
 
-    mergesort(arr, temp, s, e);
+    mergesort(arr, s, e);
     
     cout << "After merge sort: " << endl;
     for (int j = 0; j < size; j++)
